@@ -11,7 +11,7 @@
 - Clone the repository
 
 ```bash
-git clone
+git clone git@github.com:Axeloooo/Object-Oriented-Principles.git
 ```
 
 - Move to the repository folder
