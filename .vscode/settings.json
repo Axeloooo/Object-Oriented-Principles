@@ -1,0 +1,8 @@
+{
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "/Users/axelsanchez/Dev/Tools/Java/junit/hamcrest-core-1.3.jar",
+    "/Users/axelsanchez/Dev/Tools/Java/junit/junit-4.13.2.jar"
+  ],
+  "java.debug.settings.onBuildFailureProceed": true
+}
