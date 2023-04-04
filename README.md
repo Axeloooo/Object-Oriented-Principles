@@ -32,7 +32,7 @@ code .
 cd Assignment1
 ```
 
-- Comnpile
+- Compile
 
 ```bash
 javac edu/ucalgary/oop/*.java
