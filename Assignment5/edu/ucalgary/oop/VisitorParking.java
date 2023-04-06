@@ -117,4 +117,20 @@ public class VisitorParking {
     return startDates;
   }
 
+  public HashMap<String, TreeSet<LocalDate>> getParkingRecord() {
+    HashMap<String, TreeSet<LocalDate>> parkingInfo = new HashMap<>();
+    for (String licence : this.parkingInfo.keySet()) {
+      TreeSet<LocalDate> dates = this.parkingInfo.get(licence);
+      TreeSet<LocalDate> newDates = new TreeSet<>((a, b) -> b.compareTo(a));
+      int index = 0;
+      for (LocalDate date : dates) {
+        if (index % 3 == 0) {
+          newDates.add(date);
+        }
+        index++;
+      }
+      parkingInfo.put(licence, newDates);
+    }
+    return parkingInfo;
+  }
 }

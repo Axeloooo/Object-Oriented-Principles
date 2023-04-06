@@ -43,3 +43,17 @@ javac edu/ucalgary/oop/*.java
 ```bash
 java edu.ucalgary.oop.AroundTheWorld
 ```
+
+### How to run tests for Assignment 5
+
+- Compile
+
+```bash
+javac -cp "lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar" Assignment5/edu/ucalgary/oop/*.java
+```
+
+- Run
+
+```bash
+java -cp "lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar:Assignment5" org.junit.runner.JUnitCore edu.ucalgary.oop.NewFeatureTest edu.ucalgary.oop.BonusTest
+```

@@ -10,8 +10,6 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class HouseholdParking extends CalgaryProperty {
-    // Each residental property is allowed one street parking permit
-    // private LinkedList<String> residentLicence = new LinkedList<String>();
     private int maxLicences = 3;
     private String residentLicence = "";
 
@@ -37,42 +35,14 @@ public class HouseholdParking extends CalgaryProperty {
      * @throws IllegalArgumentException if licence plate isn't a valid Alberta
      * licence
      */
-    // public void addOrReplaceResidentLicence(String licence) throws
-    // IllegalArgumentException {
-    // licence = Parking.standardizeAndValidateLicence(licence);
-    // int len = residentLicence.size();
-
-    // // If licence is already in the list, don't continue
-    // for (String val : residentLicence) {
-    // if (val.equals(licence)) {
-    // return;
-    // }
-    // }
-
-    // // If fewer than three are stored, add to list
-    // if (len < maxLicences) {
-    // residentLicence.add(licence);
-
-    // // If more than three are stored, replace last in list
-    // } else {
-    // this.residentLicence.set(maxLicences - 1, licence);
-    // }
-    // }
-
     public void addOrReplaceResidentLicence(String licence) throws IllegalArgumentException {
         licence = Parking.standardizeAndValidateLicence(licence);
         int len = residentLicence.length();
-
-        // If licence is already in the list, don't continue
         if (residentLicence.equals(licence)) {
             return;
         }
-
-        // If fewer than three are stored, add to list
         if (len < maxLicences) {
             residentLicence = licence;
-
-            // If more than three are stored, replace last in list
         } else {
             this.residentLicence = licence;
         }
@@ -83,11 +53,6 @@ public class HouseholdParking extends CalgaryProperty {
      * 
      * @return whether the operation succeeded or not
      */
-    // public boolean removeResidentLicence() {
-    // this.residentLicence.clear();
-    // return true;
-    // }
-
     public boolean removeResidentLicence() {
         this.residentLicence = "";
         return true;
@@ -100,29 +65,7 @@ public class HouseholdParking extends CalgaryProperty {
      * 
      * @return whether the operation succeeded or not
      */
-    // public boolean removeResidentLicence(String licence) {
-    // // Standardize the licence name. If it is invalid, it can't exist so return
-    // // false.
-    // try {
-    // licence = Parking.standardizeAndValidateLicence(licence);
-    // } catch (Exception e) {
-    // return false;
-    // }
-
-    // for (int i = 0; i < this.residentLicence.size(); i++) {
-    // if (licence.equals(this.residentLicence.get(i))) {
-    // this.residentLicence.remove(i);
-    // return true;
-    // }
-    // }
-
-    // // Couldn't find entry
-    // return false;
-    // }
-
     public boolean removeResidentLicence(String licence) throws IllegalArgumentException {
-        // Standardize the licence name. If it is invalid, it can't exist so return
-        // false.
         try {
             licence = Parking.standardizeAndValidateLicence(licence);
         } catch (Exception e) {
@@ -134,7 +77,6 @@ public class HouseholdParking extends CalgaryProperty {
             return true;
         }
 
-        // Couldn't find entry
         return false;
     }
 
@@ -143,10 +85,6 @@ public class HouseholdParking extends CalgaryProperty {
      * 
      * @return An array containing the resident's licences
      */
-    // public String[] getResidentLicence() {
-    // String result[] = this.residentLicence.toArray(new String[maxLicences]);
-    // return result;
-    // }
     public String getResidentLicence() {
         return this.residentLicence;
     }
@@ -165,14 +103,12 @@ public class HouseholdParking extends CalgaryProperty {
 
     public ArrayList<String> getLicencesRegisteredForDate() {
         ArrayList<String> result = new ArrayList<String>();
-        // result.add(this.residentLicence);
         result.addAll(this.visitorParking.getLicencesRegisteredForDate());
         return result;
     }
 
     public ArrayList<String> getLicencesRegisteredForDate(LocalDate commonDate) {
         ArrayList<String> result = new ArrayList<String>();
-        // result.add(this.residentLicence);
         result.addAll(this.visitorParking.getLicencesRegisteredForDate(commonDate));
         return result;
     }
