@@ -26,6 +26,8 @@ cd Object-Oriented-Principles
 code .
 ```
 
+### How to run Assignment 1
+
 - Move to the Assignment1 folder (for example)
 
 ```bash
